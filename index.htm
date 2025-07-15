@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>International Energy Services Limited</title>
+  <link rel="icon" href="https://ieslglobal.com/wp-content/uploads/2022/11/IESL-Favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo">
+      <img src="https://ieslglobal.com/wp-content/uploads/2022/11/IESL-Logo.png" alt="IESL Logo" />
+    </a>
+    <button class="menu-toggle" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li class="has-submenu">
+          <a href="#">About</a>
+          <ul class="submenu">
+            <li><a href="#">About IESL</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Our Activities</a></li>
+            <li><a href="#">Total Quality Management</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Services</a>
+          <ul class="submenu">
+            <li><a href="#">Engineering Design</a></li>
+            <li><a href="#">Environmental & Laboratory Services</a></li>
+            <li><a href="#">Oilfield Supply & Services</a></li>
+            <li><a href="#">Technical Services</a></li>
+            <li><a href="#">Power & Renewable Energy</a></li>
+            <li><a href="#">IESL Gas Solutions Limited</a></li>
+          </ul>
+        </li>
+        <li class="has-submenu">
+          <a href="#">Experience</a>
+          <ul class="submenu">
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Our Clients</a></li>
+            <li><a href="#">Our Strategic Partners</a></li>
+          </ul>
+        </li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">CSR</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <form class="styled-search">
+      <button type="submit">
+        <span class="icon"><i class="fas fa-search"></i></span>
+        <span class="label">SEARCH</span>
+      </button>
+    </form>
+  </header>
+  <section class="hero" id="hero">
+    <div class="hero-text" id="hero-text">
+      <h2>A PAN AFRICAN ENERGY SERVICES COMPANY</h2>
+    </div>
+    <div class="hero-controls">
+      <button id="prevSlide">&#10094;</button>
+      <button id="nextSlide">&#10095;</button>
+    </div>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+  <section class="business-units">
+    <div class="business-left">
+      <h2>Our Strategic Business Units</h2>
+      <div class="underline"></div>
+      <ul class="unit-list">
+        <li class="active" data-index="0"><i class="fas fa-cogs"></i> Engineering Design</li>
+        <li data-index="1"><i class="fas fa-hard-hat"></i> Oilfield Supply & Services</li>
+        <li data-index="2"><i class="fas fa-anchor"></i> Technical Services</li>
+        <li data-index="3"><i class="fas fa-vial"></i> Environmental & Laboratory Services</li>
+        <li data-index="4"><i class="fas fa-bolt"></i> Power & Renewable Energy</li>
+      </ul>
+    </div>
+    <div class="business-right" id="unit-display" style="background-image: url('https://ieslglobal.com/wp-content/uploads/slider/cache/99cc01ed537735a97d1b201d3f90bef6/SBU-Engineering-Design.jpg');">
+      <div class="unit-content">
+        <h3>Engineering Design</h3>
+        <p>
+          We have expertise in delivering multifarious engineering design solutions such as Piping and pipeline,
+          Mechanical, Process, Instrument & Control, Electrical, and Civil/Structural to oil and gas, power,
+          and public sectors.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="about container">
+    <h2>About IESL</h2>
+    <p>We are a pool of well-trained specialists with over 200+ years of combined management experience. We focus on diversity, integrity, collaboration, and excellence in the African energy landscape.</p>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 IESL Global. All rights reserved.</p>
+      <p>Contact: energyhouse@ieslglobal.com | +234 706 281 0869</p>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    const hero = document.getElementById('hero');
+    const heroText = document.getElementById('hero-text');
+    const heroDots = document.getElementById('hero-dots');
+
+    const slides = [
+      { image: 'IESL-Home-Banner-1.jpg', text: 'A PAN AFRICAN ENERGY SERVICES COMPANY' },
+      { image: 'IESL-Home-Banner-2.jpg', text: '30+ YEARS OF EXPERIENCE IN PROVIDING ENGINEERING & TECHNICAL SERVICES' },
+      { image: 'IESL-Home-Banner-3.jpg', text: 'MAINTAINED TECHNICAL PARTNERSHIP WITH DORIS ENGINEERING FOR OVER 10 YEARS' },
+      { image: 'IESL-Home-Banner-5.jpg', text: 'OPERATING IN GHANA SINCE 2007' }
+    ];
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const { image, text } = slides[index];
+      hero.style.backgroundImage = `url('${image}')`;
+      heroText.innerHTML = `<h2>${text}</h2>`;
+      document.querySelectorAll('.hero-dots span').forEach(dot => dot.classList.remove('active'));
+      heroDots.children[index].classList.add('active');
+    }
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('span');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+      heroDots.appendChild(dot);
+    });
+
+    document.getElementById('nextSlide').addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('prevSlide').addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide);
+
+    const unitList = document.getElementById('unit-list');
+    const unitTitle = document.getElementById('unit-title');
+    const unitDescription = document.getElementById('unit-description');
+    const unitDisplay = document.getElementById('unit-display');
+
+    const units = [
+      {
+        title: 'Engineering Design',
+        text: 'We have expertise in delivering multifarious engineering design solutions such as Piping and pipeline, Mechanical, Process, Instrument & Control, Electrical, and Civil/Structural to oil and gas, power, and public sectors.',
+        image: 'SBU-Engineering-Design.jpg'
+      },
+      {
+        title: 'Oilfield Supply & Services',
+        text: 'IESL offers comprehensive fabrication capabilities spanning various aspects such as piping, civil work, structural, steel, and module prefabrication for both offshore and onshore facilities, complemented by our specialized expertise in supply chain management, integrated operations and maintenance, system upgrades, commissioning, and installation services, all supported by our skilled personnel catering to the diverse maintenance and operational requirements of our clients across offshore and onshore installations.',
+        image: 'SBU-Oilfield-Supply-Services.jpg'
+      },
+      {
+        title: 'Technical Services',
+        text: 'Our technical service proficiency encompasses technical support, engineering management, project oversight, inspection, subcontractor documentation management, procurement, and materials expediting..',
+        image: 'SBU-Technical-Services.jpg'
+      },
+      {
+        title: "Environmental & Laboratory Services",
+        text: "Our company offers comprehensive Environmental & Laboratory services, including Waste Management, Remediation, Environmental Quality Compliance Monitoring, and an Environmental Laboratory, catering to the needs of both the Oil and Gas Industry and manufacturing companies. Our state-of-the-art environmental laboratory is located in Port Harcourt, River State, Nigeria.",
+        image: "SBU-Environmental-Laboratory-Services"
+      },
+      {
+        title: "Power & Renewable Energy Services",
+        text: "IESL offers end-to-end engineering, construction, and EPC services for power generation facilities, transmission & distribution infrastructure, and a diverse range of energy solutions, from household solar hybrid systems to mini solar grid systems for rural electrification and industrial power backup.",
+        image: "SBU-Power-Renewable-Energy-Services"
+      }
+    ];
+
+    const listItems = document.querySelectorAll(".unit-list li");
+    const display = document.getElementById("unit-display");
+
+    listItems.forEach(item => {
+      item.addEventListener("click", () => {
+        document.querySelector(".unit-list li.active")?.classList.remove("active");
+        item.classList.add("active");
+
+        const index = item.dataset.index;
+        display.style.backgroundImage = `url('${units[index].image}')`;
+        display.innerHTML = `
+          <div class="unit-content">
+            <h3>${units[index].title}</h3>
+            <p>${units[index].text}</p>
+          </div>
+        `;
+      });
+    });
+  </script>
+
+</body>
+</html>
