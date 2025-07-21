@@ -253,7 +253,7 @@ body {
 
     .business-right {
       flex: 2;
-      min-height: 700px;
+      min-height: 600px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -266,11 +266,13 @@ body {
 
     .unit-content {
       background: white;
-      padding: 40px;
-      max-width: 300px;
-      min-height: 500px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      box-sizing: border-box;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
+      border-radius: o.75rem;
     }
 
     .unit-content h3 {
@@ -280,7 +282,7 @@ body {
     }
 
     .unit-content p {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.6;
       color: #333;
     }
