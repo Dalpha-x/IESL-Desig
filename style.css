@@ -13,6 +13,12 @@ body {
   line-height: 1.6;
 }
 
+h2 {
+  font-size: 28px;
+}
+p {
+  font-size: 18px;
+}
 .container {
   width: 90%;
   max-width: 1200px;
@@ -60,6 +66,7 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
+  min-height: 80px;
 }
 
 .nav-menu li {
@@ -160,6 +167,19 @@ body {
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
   font-family: 'segoe ui', sans-serif;
+}
+
+.about-hero {
+  background-color: #228b22;
+  background-size: cover;
+  background-position: center;
+  min-height: 80px;
+  font-size: 30px;
+  color: whitesmoke;
+  text-align: justify;
+  padding-left: 2em;
+  padding-top: 0.7em;
+  letter-spacing: 0.2em;
 }
 
 /* ========== HERO CONTROLS ========== */
