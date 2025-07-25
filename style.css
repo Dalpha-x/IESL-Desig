@@ -5,20 +5,26 @@
   box-sizing: border-box;
 }
 
+.logo {
+  display: flex;
+  font-size: 22px;
+  align-items: center;
+  gap: 0;
+  font-weight: 700;
+  color: #228b22;
+  text-decoration: none;
+  line-height: 1;
+}
+
 body {
   font-family: 'Titillium Web', sans-serif;
   background-color: #f9f9f9;
   color: #333;
-  padding-top: 100px;
+  padding-top: 80px;
+  margin: 10px 0;
   line-height: 1.6;
 }
 
-h2 {
-  font-size: 28px;
-}
-p {
-  font-size: 18px;
-}
 .container {
   width: 90%;
   max-width: 1200px;
@@ -36,7 +42,7 @@ p {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  z-index: 3500;
+  z-index: 99;
   flex-wrap: wrap;
 }
 
@@ -143,7 +149,7 @@ p {
 
 /* ========== HERO ========== */
 .hero {
-  height: 800px;
+  height: 700px;
   background-size: cover;
   background-position: center;
   transition: background-image 1s ease-in-out;
@@ -173,13 +179,18 @@ p {
   background-color: #228b22;
   background-size: cover;
   background-position: center;
-  min-height: 80px;
-  font-size: 30px;
+  min-height: 70px;
+  font-size: 28px;
   color: whitesmoke;
   text-align: justify;
-  padding-left: 2em;
-  padding-top: 0.7em;
-  letter-spacing: 0.2em;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+.about p {
+  margin-bottom: 1.2em;
+  font-size: 17px;
 }
 
 /* ========== HERO CONTROLS ========== */
