@@ -1,4 +1,4 @@
-
+// Load external HTML sections (nav and footer)
 function loadIncludes() {
   const includes = document.querySelectorAll('[data-include]');
   includes.forEach(el => {
