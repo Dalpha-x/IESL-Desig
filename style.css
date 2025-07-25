@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .logo {
   display: flex;
   font-size: 22px;
@@ -345,6 +349,7 @@ nav {
       .unit-list li {
         justify-content: center;
       }
+      
     }
 
 /* ========== ABOUT ========== */
@@ -412,6 +417,22 @@ footer {
     flex: unset;
     width: 100%;
   }
+#mobileMenu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  width: 100%;
+  position: absolute;
+  top: 80px; /* below the header */
+  left: 0;
+  z-index: 998;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#mobileMenu:not(.hidden) {
+  display: flex;
+}
 }
 .contact-page {
   padding: 2rem;
