@@ -42,7 +42,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  z-index: 99;
+  z-index: 999;
   flex-wrap: wrap;
 }
 
@@ -65,6 +65,11 @@ body {
   height: 3px;
   background-color: #228b22;
   border-radius: 2px;
+}
+
+nav {
+  position: relative;
+  z-index: 1000;
 }
 
 .nav-menu {
@@ -317,6 +322,11 @@ body {
       line-height: 1.6;
       color: #333;
     }
+
+    .hidden {
+  display: none;
+}
+
 
     @media (max-width: 768px) {
       .business-units {
