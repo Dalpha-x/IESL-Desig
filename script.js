@@ -1,3 +1,21 @@
+
+function loadIncludes() {
+  const includes = document.querySelectorAll('[data-include]');
+  includes.forEach(el => {
+    fetch(el.getAttribute('data-include'))
+      .then(res => res.text())
+      .then(data => {
+        el.innerHTML = data;
+      });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadIncludes();
+
+});
+
+
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.nav-menu');
 
