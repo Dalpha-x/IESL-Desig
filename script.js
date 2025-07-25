@@ -15,15 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
 const toggle = document.querySelector('.menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+const menu = document.querySelector('.nav-menu');
 
-  if (toggle && mobileMenu) {
-    toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
 
 const hero = document.getElementById('hero');
 const heroText = document.getElementById('hero-text');
