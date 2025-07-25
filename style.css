@@ -323,9 +323,6 @@ nav {
       color: #333;
     }
 
-    .hidden {
-  display: none;
-}
 
 
     @media (max-width: 768px) {
