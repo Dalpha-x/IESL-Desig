@@ -377,6 +377,9 @@ footer {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  nav#desktopMenu {
+    display: none;
+  }
   .menu-toggle {
     display: flex;
   }
