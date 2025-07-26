@@ -1,3 +1,17 @@
+function loadIncludes() {
+  const includes = document.querySelectorAll('[data-include]');
+  includes.forEach(el => {
+    fetch(el.getAttribute('data-include'))
+      .then(res => res.text())
+      .then(data => {
+        el.innerHTML = data;
+      });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadIncludes();
+  
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.nav-menu');
 
@@ -112,3 +126,19 @@ setInterval(() => {
 }, 6000);
 
 showUnit(unitIndex);
+
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.classList.add('show');
+  } else {
+    scrollToTopBtn.classList.remove('show');
+  }
+});
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+});
