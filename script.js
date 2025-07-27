@@ -1,18 +1,34 @@
-function loadIncludes() {
+function loadIncludes(callback) {
   const includes = document.querySelectorAll('[data-include]');
+  let loaded = 0;
+
+  if (includes.length === 0 && typeof callback === 'function') {
+    callback();
+    return;
+  }
+
   includes.forEach(el => {
-    fetch(el.getAttribute('data-include'))
-      .then(res => res.text())
-      .then(data => {
-        el.innerHTML = data;
-      });
+    const file = el.getAttribute('data-include');
+    if (file) {
+      fetch(file)
+        .then(response => {
+          if (!response.ok) throw new Error(`Could not load ${file}`);
+          return response.text();
+        })
+        .then(data => {
+          el.innerHTML = data;
+          loaded++;
+          if (loaded === includes.length && typeof callback === 'function') {
+            callback();
+          }
+        })
+        .catch(error => console.error(error));
+    }
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadIncludes();
-
-  // ✅ Mobile Menu Toggle
+function setupSiteFeatures() {
+  // 🔸 Hamburger Menu Toggle
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.nav-menu');
   if (toggle && menu) {
@@ -21,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ✅ Hero Section Slider
+  // 🔸 Hero Section
   const hero = document.getElementById('hero');
   const heroText = document.getElementById('hero-text');
   const heroDots = document.getElementById('hero-dots');
@@ -36,13 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
 
   function showSlide(index) {
+    if (!hero || !heroText || !heroDots) return;
     const { image, text } = slides[index];
-    if (hero) hero.style.backgroundImage = `url('${image}')`;
-    if (heroText) heroText.innerHTML = `<h2>${text}</h2>`;
-    if (heroDots) {
-      document.querySelectorAll('#hero-dots span').forEach(dot => dot.classList.remove('active'));
-      if (heroDots.children[index]) heroDots.children[index].classList.add('active');
-    }
+    hero.style.backgroundImage = `url('${image}')`;
+    heroText.innerHTML = `<h2>${text}</h2>`;
+    document.querySelectorAll('.hero-dots span').forEach(dot => dot.classList.remove('active'));
+    heroDots.children[index].classList.add('active');
   }
 
   if (heroDots) {
@@ -57,18 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const nextBtn = document.getElementById('nextSlide');
-  const prevBtn = document.getElementById('prevSlide');
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
+  if (document.getElementById('nextSlide')) {
+    document.getElementById('nextSlide').addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     });
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+  if (document.getElementById('prevSlide')) {
+    document.getElementById('prevSlide').addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
     });
@@ -81,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   showSlide(currentSlide);
 
-  // ✅ Business Units Section
+  // 🔸 Business Units Section
   const units = [
     {
       title: 'Engineering Design',
@@ -90,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: 'Oilfield Supply & Services',
-      text: 'MCNL offers comprehensive fabrication capabilities spanning various aspects such as piping, civil work, structural, steel, and module prefabrication for both offshore and onshore facilities...',
+      text: 'MCNL offers comprehensive fabrication capabilities spanning various aspects such as piping, civil work, structural, steel, and module prefabrication for both offshore and onshore facilities, complemented by our specialized expertise in supply chain management, integrated operations and maintenance, system upgrades, commissioning, and installation services, all supported by our skilled personnel catering to the diverse maintenance and operational requirements of our clients across offshore and onshore installations.',
       image: 'SBU-Oilfield-Supply-Services.jpg'
     },
     {
@@ -100,12 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       title: "Environmental & Laboratory Services",
-      text: "Our company offers comprehensive Environmental & Laboratory services, including Waste Management, Remediation, Environmental Quality Compliance Monitoring, and an Environmental Laboratory...",
+      text: "Our company offers comprehensive Environmental & Laboratory services, including Waste Management, Remediation, Environmental Quality Compliance Monitoring, and an Environmental Laboratory, catering to the needs of both the Oil and Gas Industry and manufacturing companies. Our state-of-the-art environmental laboratory is located in Port Harcourt, River State, Nigeria.",
       image: "SBU-Environmental-Laboratory-Services.jpg"
     },
     {
       title: "Power & Renewable Energy Services",
-      text: "MCNL offers end-to-end engineering, construction, and EPC services for power generation facilities, transmission & distribution infrastructure, and diverse energy solutions...",
+      text: "MCNL offers end-to-end engineering, construction, and EPC services for power generation facilities, transmission & distribution infrastructure, and a diverse range of energy solutions, from household solar hybrid systems to mini solar grid systems for rural electrification and industrial power backup.",
       image: "SBU-Power-Renewable-Energy-Services.jpg"
     }
   ];
@@ -115,29 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let unitIndex = 0;
 
   function showUnit(index) {
+    if (!display) return;
     const unit = units[index];
-    if (display) {
-      display.style.backgroundImage = `url('${unit.image}')`;
-      display.innerHTML = `
-        <div class="unit-content">
-          <h3>${unit.title}</h3>
-          <p>${unit.text}</p>
-        </div>
-      `;
-    }
-
+    display.style.backgroundImage = `url('${unit.image}')`;
+    display.innerHTML = `
+      <div class="unit-content">
+        <h3>${unit.title}</h3>
+        <p>${unit.text}</p>
+      </div>
+    `;
     document.querySelectorAll('.unit-list li').forEach(li => li.classList.remove('active'));
-    const activeLi = document.querySelector(`.unit-list li[data-index="${index}"]`);
-    if (activeLi) activeLi.classList.add('active');
+    const selected = document.querySelector(`.unit-list li[data-index="${index}"]`);
+    if (selected) selected.classList.add('active');
   }
 
   listItems.forEach(item => {
     item.addEventListener("click", () => {
-      const i = parseInt(item.dataset.index);
-      if (!isNaN(i)) {
-        unitIndex = i;
-        showUnit(unitIndex);
-      }
+      unitIndex = parseInt(item.dataset.index);
+      showUnit(unitIndex);
     });
   });
 
@@ -147,4 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 6000);
 
   showUnit(unitIndex);
+}
+
+// Wait for DOM + includes
+document.addEventListener('DOMContentLoaded', () => {
+  loadIncludes(() => {
+    setupSiteFeatures();
+  });
 });
