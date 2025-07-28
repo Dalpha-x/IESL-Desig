@@ -7,7 +7,7 @@
 body {
   font-family: 'Titillium Web', sans-serif;
   background-color: #f9f9f9;
-  color: #333;
+  color: #222222;
   padding-top: 80px;
   margin: 10px 0;
   line-height: 1.6;
@@ -307,6 +307,20 @@ nav {
   border-radius: 5px;
 }
 
+.about-page {
+  padding: 2rem;
+  font-family: 'Quicksand', sans-serif;
+  background: #f9f9f9;
+}
+
+.about-header {
+  text-align: center;
+  background-size: cover;
+  margin-bottom: 2rem;
+  background-color: #087837;
+
+}
+
 .about h2 {
   margin-bottom: 10px;
   color: #228b22;
@@ -340,7 +354,7 @@ footer {
   top: 100%;
   right: 0;
   width: 110px;
-  background-color: #ffffff; /* or rgba(0,0,0,0.9) for a dark overlay */
+  background-color: #ffffff; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   padding: 1rem;
