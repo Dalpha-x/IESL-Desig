@@ -456,3 +456,127 @@ footer {
 .contact-form button:hover {
   background-color: #087837;
 }
+
+/* ========== PARTNER SECTION ========== */
+.partner-section {
+  background-color: #1a6f1a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.partner-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.partner-grid .logo {
+  width: 100px;
+  height: auto;
+}
+
+.partner-grid .logo img {
+  width: 120%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-grid .logo img:hover {
+  transform: scale(1.05);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  background-color: #1a6f1a;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-grid h3 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #230d5f; /* Optional accent color */
+}
+
+.footer-grid p {
+  font-size: 1.4em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-grid a {
+  color: #230d5f;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-grid p,
+.footer-grid li {
+  font-size: 1.4em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #230d5f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #f1c40f;
+  color: #111;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #fff;
+  color: #111;
+  transform: scale(1.1);
+}
