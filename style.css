@@ -343,7 +343,7 @@ nav {
   padding: 80px 20px;
   text-align: center;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 90%);
   z-index: 1;
 }
 
