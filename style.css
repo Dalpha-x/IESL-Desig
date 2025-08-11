@@ -646,7 +646,6 @@ footer {
   padding: 80px 20px;
   text-align: center;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 90%);
   overflow: hidden;
   z-index: 1;
 }
@@ -752,7 +751,6 @@ footer {
   padding: 80px 20px;
   text-align: center;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 90%);
   overflow: hidden;
   z-index: 1;
 }
@@ -919,4 +917,51 @@ footer {
 
 .apply-btn:hover {
     background: #1b6f1b;
+}
+
+/* ===== Your existing CSS stays here ===== */
+
+
+/* ===== Mobile Fixes ===== */
+@media (max-width: 768px) {
+
+    /* Prevent horizontal scroll and keep layout contained */
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    /* Stack navigation vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    /* Responsive images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Stack flex/row layouts */
+    .row, .flex {
+        flex-direction: column;
+    }
+
+    /* Adjust heading sizes for small screens */
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
 }
