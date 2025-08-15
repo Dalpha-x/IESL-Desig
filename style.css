@@ -154,7 +154,7 @@ nav {
   height: 700px;
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -554,7 +554,7 @@ footer {
 .footer-grid h3 {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #230d5f; /* Optional accent color */
+  color: #f1c40f; /* Optional accent color */
 }
 
 .footer-grid p {
@@ -564,7 +564,7 @@ footer {
 }
 
 .footer-grid a {
-  color: #230d5f;
+  color: #f1c40f;
   text-decoration: none;
 }
 
@@ -590,7 +590,7 @@ footer {
 }
 
 .footer-links a {
-  color: #230d5f;
+  color: #f1c40f;
   text-decoration: none;
   transition: color 0.3s ease;
 }
