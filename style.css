@@ -367,7 +367,7 @@ nav {
 .about-header {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(rgb(219, 219, 217), rgba(93, 94, 93, 0.616)), url('About-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(219, 219, 217, 0.842), rgba(93, 94, 93, 0.616)), url('About-bg.jpg') center/cover no-repeat;
   color: #fff;
 }
 
@@ -424,7 +424,7 @@ nav {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -957,7 +957,7 @@ footer {
 
 /* Header */
 .careers-header {
-  background: linear-gradient(rgb(219, 219, 217), rgba(93, 94, 93, 0.616)), url('career-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(219, 219, 217, 0.87), rgba(93, 94, 93, 0.616)), url('career-bg.jpg') center/cover no-repeat;
   color: #fff;
   padding: 2.5em 1.5em;
   height: 200px;
