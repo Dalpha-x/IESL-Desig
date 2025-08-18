@@ -763,13 +763,13 @@ footer {
 }
 
 .footer-grid h3 {
-  font-size: 2em;
+  font-size: 1.6em;
   margin-bottom: 15px;
   color: #f1c40f; /* Optional accent color */
 }
 
 .footer-grid p {
-  font-size: 1.4em;
+  font-size: 1em;
   line-height: 1.6;
   color: #ddd;
 }
@@ -785,7 +785,7 @@ footer {
 
 .footer-grid p,
 .footer-grid li {
-  font-size: 1.4em;
+  font-size: 1.2em;
   line-height: 1.6;
   color: #ddd;
 }
@@ -993,7 +993,7 @@ footer {
 .careers-intro p {
     font-size: 1.1rem;
     color: #333;
-    font-weight: 500;
+    font-weight: 400;
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -1141,9 +1141,6 @@ footer {
     background: #1b6f1b;
 }
 
-/* ===== Your existing CSS stays here ===== */
-
-
 /* ===== Mobile Fixes ===== */
 @media (max-width: 768px) {
 
@@ -1186,4 +1183,9 @@ footer {
     h2 {
         font-size: 1.4rem;
     }
+}
+
+/* ===== Global Font Reset to Segoe UI ===== */
+body, h1, h2, h3, h4, h5, h6, p, a, li, span, input, textarea, button {
+    font-family: 'Segoe UI', Arial, sans-serif !important;
 }
