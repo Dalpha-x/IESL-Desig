@@ -46,7 +46,7 @@ function setupSiteFeatures() {
     { image: 'MCNL-Home-Banner-1.jpg', text: 'A PAN AFRICAN ENERGY SERVICES COMPANY' },
     { image: 'MCNL-Home-Banner-2.jpg', text: '30+ YEARS OF EXPERIENCE IN PROVIDING ENGINEERING & TECHNICAL SERVICES' },
     { image: 'MCNL-Home-Banner-3.jpg', text: 'MAINTAINED TECHNICAL PARTNERSHIP WITH DORIS ENGINEERING FOR OVER 10 YEARS' },
-    { image: 'MCNL-Home-Banner-4.jpg', text: 'OPERATING IN GHANA SINCE 2007' }
+    { image: 'MCNL-Home-Banner-4.jpg', text: 'OPERATING IN NIGERIA SINCE 1992' }
   ];
 
   let currentSlide = 0;
