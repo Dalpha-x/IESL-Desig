@@ -1193,3 +1193,39 @@ body, h1, h2, h3, h4, h5, h6, p, a, li, span, input, textarea, button {
 p {
     text-align: left !important;
 }
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* Fix logo size on smaller screens */
+header .logo img {
+  max-width: 70px;
+  height: auto;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  header .logo img {
+    max-width: 150px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  header .logo img {
+    max-width: 120px;
+  }
+}
