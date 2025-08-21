@@ -540,34 +540,6 @@ nav {
   line-height: 1.6;
 }
 
-/* Footer */
-footer {
-  background-color: #228b22;
-  color: #fff;
-  text-align: center;
-  padding: 30px 15px;
-  margin-top: 40px;
-  font-size: 0.9rem;
-}
-
-/* Make the logo responsive */
-header .logo img {
-  max-width: 200px;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  header .logo img {
-    max-width: 150px;
-  }
-}
-
-@media (max-width: 480px) {
-  header .logo img {
-    max-width: 70px;
-  }
-}
-
 /* ========== RESPONSIVE RULES ========== */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -1186,20 +1158,20 @@ p {
 
 /* Fix logo size on smaller screens */
 header .logo img {
-  max-width: 70px;
+  max-width: 100px;
   height: auto;
 }
 
 /* Tablets */
 @media (max-width: 768px) {
   header .logo img {
-    max-width: 150px;
+    max-width: 90px;
   }
 }
 
 /* Mobile Phones */
 @media (max-width: 480px) {
   header .logo img {
-    max-width: 120px;
+    max-width: 70px;
   }
 }
