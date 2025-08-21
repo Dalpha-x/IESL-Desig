@@ -313,56 +313,6 @@ nav {
   background: #f9f9f9;
 }
 
-/* .about-header {
-  text-align: center;
-  background-size: cover;
-  margin-bottom: 2rem;
-  background-color: #087837;
-
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.671);
-  z-index: 0;
-}
-
-.page-header .page-header-content {
-  position: relative;
-  z-index: 1;
-}
-
-
-.page-header {
-  background: url('MCNL-Home-Banner-1.jpg') center/cover no-repeat;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 65%, 0 90%);
-  z-index: 1;
-}
-
-.page-header-content h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  font-weight: 700;
-  color: #f0f0f0;
-}
-
-.page-header-content p {
-  font-size: 1.1em;
-  color: #ccc;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}  */
-
-
 /* About Page Reconstruction */
 .about-header {
   text-align: center;
@@ -376,6 +326,7 @@ nav {
   margin-bottom: 1rem;
 }
 
+/* Main About Section */
 .about-section {
   max-width: 1100px;
   margin: 3rem auto;
@@ -398,6 +349,7 @@ nav {
   font-size: 1rem;
 }
 
+/* What We Do Section */
 #what-we-do {
   padding: 60px 20px;
   background: #f9f9f9;
@@ -406,7 +358,7 @@ nav {
 }
 
 #what-we-do h2 {
-  color: #230d5f; /* Deep Blue */
+  color: #230d5f;
   margin-bottom: 40px;
   font-size: 2em;
 }
@@ -432,7 +384,7 @@ nav {
 
 .service h3 {
   margin: 0;
-  color: #1f1864; /* Dark Blue */
+  color: #1f1864;
   font-size: 1.1em;
 }
 
@@ -446,7 +398,7 @@ nav {
 }
 
 .service:hover {
-  background: #228b22; /* MCNL green */
+  background: #228b22;
   color: #fff;
 }
 
@@ -462,7 +414,7 @@ nav {
 /* Quote-like block */
 .about-quote {
   background: #f9f9f9;
-  border-left: 5px solid #228b22; /* brand green */
+  border-left: 5px solid #228b22;
   padding: 20px;
   font-style: italic;
   font-size: 1.1rem;
@@ -470,9 +422,10 @@ nav {
   margin-top: 20px;
 }
 
+/* Two-column Section */
 .two-column {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping */
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
@@ -493,20 +446,23 @@ nav {
 }
 
 .column.image img {
-  
   border-radius: 30%;
   max-width: 100%;
   height: auto;
 }
 
-
-/* Mobile responsiveness */
+/* Mobile responsiveness for two-column layout */
 @media (max-width: 768px) {
-  .two-column .column {
-    flex: 1 1 100%; /* stack on mobile */
+  .two-column {
+    flex-direction: column;
+    text-align: center;
+  }
+  .column.text {
+    padding-right: 0;
   }
 }
 
+/* About Boxes */
 .about-row {
   display: flex;
   flex-wrap: wrap;
@@ -514,7 +470,7 @@ nav {
 }
 
 .about-box {
-  flex: 1 1 calc(33.333% - 20px); /* 3 in a row */
+  flex: 1 1 calc(33.333% - 20px);
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -530,7 +486,7 @@ nav {
 
 .about-box h2 {
   font-size: 1.4rem;
-  color: #230d5f; /* deep blue */
+  color: #230d5f;
   margin-bottom: 10px;
 }
 
@@ -540,13 +496,12 @@ nav {
   line-height: 1.6;
 }
 
-/* Mobile responsive */
+/* Stack about boxes on mobile */
 @media (max-width: 768px) {
   .about-box {
     flex: 1 1 100%;
   }
 }
-
 
 /* CEO/Founder Section */
 .ceo-section {
@@ -557,6 +512,8 @@ nav {
   background: #f8f9fa;
   padding: 3rem 2rem;
   margin-top: 4rem;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .ceo-section img {
@@ -583,8 +540,7 @@ nav {
   line-height: 1.6;
 }
 
-
-/* ========== FOOTER ========== */
+/* Footer */
 footer {
   background-color: #228b22;
   color: #fff;
@@ -592,6 +548,24 @@ footer {
   padding: 30px 15px;
   margin-top: 40px;
   font-size: 0.9rem;
+}
+
+/* Make the logo responsive */
+header .logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  header .logo img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo img {
+    max-width: 70px;
+  }
 }
 
 /* ========== RESPONSIVE RULES ========== */
