@@ -473,11 +473,7 @@ nav {
 .two-column {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping */
-<<<<<<< HEAD
   align-items: flex-start;
-=======
-  align-items: center;
->>>>>>> a4cfa498ee1a2d003b809bb5fcc7da8e80719c1c
   justify-content: space-between;
   gap: 20px;
   padding: 40px 20px;
