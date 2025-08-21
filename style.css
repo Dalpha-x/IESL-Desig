@@ -1208,6 +1208,7 @@ footer {
 
 /* Extra Small Devices */
 @media (max-width: 480px) {
+<<<<<<< HEAD
   .hero h2 {
     font-size: 24px;
   }
@@ -1222,5 +1223,9 @@ footer {
 
   .partners-logos img {
     max-width: 120px;
+=======
+  header .logo img {
+    max-width: 30px !important;
+>>>>>>> 017b275705002c509701fce1dc7fa85fa2313ebb
   }
 }
