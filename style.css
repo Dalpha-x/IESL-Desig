@@ -1,3 +1,6 @@
+/* =========================================================
+   1. GLOBAL RESET & TYPOGRAPHY
+========================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +8,12 @@
 }
 
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f9f9f9;
   color: #222222;
   padding-top: 80px;
-  margin: 10px 0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
@@ -23,7 +26,13 @@ body {
   display: none !important;
 }
 
-/* ========== HEADER ========== */
+p {
+  text-align: left;
+}
+
+/* =========================================================
+   2. HEADER & NAVIGATION
+========================================================= */
 .site-header {
   position: fixed;
   top: 0;
@@ -41,8 +50,8 @@ body {
 
 .logo {
   display: flex;
-  font-size: 22px;
   align-items: center;
+  font-size: 22px;
   font-weight: 700;
   color: #228b22;
   text-decoration: none;
@@ -89,13 +98,16 @@ nav {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   text-align: center;
+  transition: color 0.3s ease;
 }
 
 .nav-menu li a:hover {
   color: #1a6f1a;
 }
 
-/* ========== DROPDOWN SUBMENU ========== */
+/* =========================================================
+   3. DROPDOWN MENU
+========================================================= */
 .submenu {
   position: absolute;
   top: 100%;
@@ -120,7 +132,7 @@ nav {
   padding: 10px;
   display: block;
   font-size: 14px;
-  color: green;
+  color: #228b22;
 }
 
 .submenu li a:hover {
@@ -128,7 +140,9 @@ nav {
   color: #1a6f1a;
 }
 
-/* ========== SEARCH ========== */
+/* =========================================================
+   4. SEARCH BAR
+========================================================= */
 .styled-search {
   display: flex;
   align-items: center;
@@ -138,7 +152,7 @@ nav {
 .styled-search button {
   background: none;
   border: none;
-  color: green;
+  color: #228b22;
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
@@ -149,12 +163,13 @@ nav {
   letter-spacing: 0.3em;
 }
 
-/* ========== HERO ========== */
+/* =========================================================
+   5. HERO SECTION
+========================================================= */
 .hero {
   height: 700px;
   background-size: cover;
   background-position: center;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,12 +186,11 @@ nav {
 .hero h2 {
   font-size: 42px;
   font-weight: 700;
-  color: white;
+  color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  font-family: 'Segoe UI', sans-serif;
 }
 
-/* ========== HERO CONTROLS ========== */
+/* Hero Controls */
 .hero-controls {
   position: absolute;
   top: 50%;
@@ -193,7 +207,7 @@ nav {
   font-size: 30px;
   background: none;
   border: none;
-  color: white;
+  color: #fff;
   cursor: pointer;
   pointer-events: all;
   transition: transform 0.2s ease;
@@ -204,7 +218,9 @@ nav {
   transform: scale(1.2);
 }
 
-/* ========== STRATEGIC BUSINESS UNITS ========== */
+/* =========================================================
+   6. BUSINESS UNITS SECTION
+========================================================= */
 .business-units {
   display: flex;
   flex-wrap: wrap;
@@ -221,13 +237,13 @@ nav {
   flex-direction: column;
   justify-content: center;
   background-color: #f2f2f2;
+  text-align: center;
 }
 
 .business-left h2 {
   font-size: 45px;
   font-weight: 700;
   color: #228b22;
-  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -299,25 +315,60 @@ nav {
   color: #333;
 }
 
-/* ========== ABOUT SECTION ========== */
-.about {
-  background-color: #fff;
+/* ========== PARTNER SECTION ========== */
+.partner-section {
+  background-color: #1a6f1a;
   padding: 40px 20px;
-  margin-top: 40px;
-  border-radius: 5px;
+  text-align: center;
 }
 
+.partner-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.partner-grid .logo {
+  width: 100px;
+  height: auto;
+}
+
+.partner-grid .logo img {
+  width: 120%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-grid .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   7. ABOUT PAGE
+========================================================= */
 .about-page {
   padding: 2rem;
-  font-family: 'Quicksand', sans-serif;
   background: #f9f9f9;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* About Page Reconstruction */
 .about-header {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(rgba(219, 219, 217, 0.842), rgba(93, 94, 93, 0.616)), url('About-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(219, 219, 217, 0.85), rgba(93, 94, 93, 0.6)),
+    url('About-bg.jpg') center/cover no-repeat;
   color: #fff;
 }
 
@@ -333,7 +384,7 @@ nav {
   padding: 2rem;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   line-height: 1.7;
 }
 
@@ -354,7 +405,6 @@ nav {
   padding: 60px 20px;
   background: #f9f9f9;
   text-align: center;
-  font-family: 'Quicksand', Segoe UI, sans-serif;
 }
 
 #what-we-do h2 {
@@ -440,7 +490,7 @@ nav {
   padding-right: 20px;
 }
 
-.column.text h2{
+.column.text h2 {
   color: #230d5f;
   margin-bottom: 10px;
 }
@@ -471,17 +521,17 @@ nav {
 
 .about-box {
   flex: 1 1 calc(33.333% - 20px);
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 25px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-box h2 {
@@ -496,7 +546,6 @@ nav {
   line-height: 1.6;
 }
 
-/* Stack about boxes on mobile */
 @media (max-width: 768px) {
   .about-box {
     flex: 1 1 100%;
@@ -540,65 +589,116 @@ nav {
   line-height: 1.6;
 }
 
-/* ========== RESPONSIVE RULES ========== */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+/* =========================================================
+   8. PROJECT PAGE
+========================================================= */
+.project-page {
+  padding: 2rem;
+  background: #f9f9f9;
+}
 
-.nav-menu {
-  display: none;
-  flex-direction: column;
+.project-header {
+  background: url('MCNL-Home-Banner-1.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-header::before {
+  content: '';
   position: absolute;
-  top: 100%;
-  right: 0;
-  width: 110px;
-  background-color: #ffffff; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 1rem;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
 }
 
-.nav-menu.active {
-  display: flex;
+.project-header * {
+  position: relative;
+  z-index: 1;
 }
 
-  .hero {
-    height: 400px;
-  }
-
-  .hero h2 {
-    font-size: 30px;
-  }
-
-  .business-units {
-    flex-direction: column;
-  }
-
-  .business-left {
-    text-align: center;
-  }
-
-  .unit-list li {
-    justify-content: center;
-  }
-
-  .business-right {
-    min-height: 300px;
-    padding: 30px;
-  }
-
-  .unit-content {
-    padding: 20px;
-    margin: auto;
-  }
+.project-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  color: #f0f0f0;
+  padding: 10px 25px;
+  border-radius: 8px;
 }
 
-/* ========== CONTACT PAGE ========== */
+.project-header p {
+  margin-top: 10px;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 6px;
+}
+
+/* Project Grid */
+.projects-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px 20px;
+}
+
+.project-content h3 {
+  font-size: 1.4rem;
+  color: #230d5f;
+  margin-bottom: 5px;
+}
+
+.project-content .client {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #228b22;
+  margin-bottom: 10px;
+}
+
+.project-content .description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   9. CONTACT PAGE
+========================================================= */
 .contact-page {
   padding: 2rem;
-  font-family: 'Quicksand', sans-serif;
   background: #f9f9f9;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .contact-page h2 {
@@ -645,7 +745,7 @@ nav {
 }
 
 .contact-form button {
-  background-color: #0a9440;
+  background-color: #230d5f;
   color: white;
   border: none;
   padding: 1rem;
@@ -658,242 +758,9 @@ nav {
   background-color: #087837;
 }
 
-/* ========== PARTNER SECTION ========== */
-.partner-section {
-  background-color: #1a6f1a;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.partner-section h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.partner-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
-  align-items: center;
-  justify-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.partner-grid .logo {
-  width: 100px;
-  height: auto;
-}
-
-.partner-grid .logo img {
-  width: 120%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.partner-grid .logo img:hover {
-  transform: scale(1.05);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-  background-color: #1a6f1a;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-grid h3 {
-  font-size: 1.6em;
-  margin-bottom: 15px;
-  color: #f1c40f; /* Optional accent color */
-}
-
-.footer-grid p {
-  font-size: 1em;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-.footer-grid a {
-  color: #f1c40f;
-  text-decoration: none;
-}
-
-.footer-grid a:hover {
-  text-decoration: underline;
-}
-
-.footer-grid p,
-.footer-grid li {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #ddd;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #f1c40f;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.footer-logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 15px;
-  display: block;
-}
-
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  background-color: #f1c40f;
-  color: #111;
-  border: none;
-  outline: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  cursor: pointer;
-  display: none; /* Hidden by default */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#backToTop:hover {
-  background-color: #fff;
-  color: #111;
-  transform: scale(1.1);
-}
-
-/* PROJECT PAGE STYLES */
-.project-page {
-  padding: 2rem;
-  font-family: 'Quicksand', sans-serif;
-  background: #f9f9f9;
-}
-
-/* Header */
-.project-header {
-  background: url('MCNL-Home-Banner-1.jpg') center/cover no-repeat;
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.project-header::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.671); /* Adjust darkness */
-  z-index: 0;
-}
-
-.project-header * {
-    position: relative;
-    z-index: 1;
-}
-
-.project-header h1 {
-    font-size: 3rem;
-    margin: 0;
-    font-weight: 700;
-    color: #f0f0f0;
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 8px;
-}
-
-.project-header p {
-    margin-top: 10px;
-    font-size: 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 6px;
-}
-
-/* Project grid */
-.projects-container {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-/* Card styles */
-.project-card {
-    background: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    border: 1px solid #eee;
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-}
-
-.project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.project-content {
-    padding: 15px 20px;
-}
-
-.project-content h3 {
-    font-size: 1.4rem;
-    color: #230d5f;
-    margin-bottom: 5px;
-}
-
-.project-content .client {
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #228b22;
-    margin-bottom: 10px;
-}
-
-.project-content .description {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-}
-
+/* =========================================================
+   10. CAREERS PAGE
+========================================================= */
 /* CAREERS PAGE STYLES */
 .career-page {
   padding: 2rem;
@@ -1087,91 +954,273 @@ nav {
     background: #1b6f1b;
 }
 
-/* ===== Mobile Fixes ===== */
-@media (max-width: 768px) {
 
-    /* Prevent horizontal scroll and keep layout contained */
-    body {
-        overflow-x: hidden;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-
-    /* Stack navigation vertically */
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        width: 100%;
-    }
-
-    /* Responsive images */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Stack flex/row layouts */
-    .row, .flex {
-        flex-direction: column;
-    }
-
-    /* Adjust heading sizes for small screens */
-    h1 {
-        font-size: 1.8rem;
-    }
-    h2 {
-        font-size: 1.4rem;
-    }
+/* =========================================================
+   11. PARTNERS SECTION
+========================================================= */
+.partners-section {
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
 }
 
-/* ===== Global Font Reset to Segoe UI ===== */
-body, h1, h2, h3, h4, h5, h6, p, a, li, span, input, textarea, button {
-    font-family: 'Segoe UI', Arial, sans-serif !important;
-}
-/* ===== Force all paragraphs to left align ===== */
-p {
-    text-align: left !important;
+.partners-section h2 {
+  color: #230d5f;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 480px) {
-  .about-section {
-    padding: 20px 10px;
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.partners-logos img {
+  max-width: 150px;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+
+.partners-logos img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+/* =========================================================
+   12. FOOTER
+========================================================= */
+footer {
+  background: #230d5f;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  background-color: #230d5f;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-grid h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #f1c40f; /* Optional accent color */
+}
+
+.footer-grid p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-grid a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.footer-grid p,
+.footer-grid li {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #f1c40f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+  display: block;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: #f1c40f;
+  color: #111;
+  border: none;
+  outline: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #fff;
+  color: #111;
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   13. BUTTONS & UTILITIES
+========================================================= */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #228b22;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1a6f1a;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #228b22;
+  border: 2px solid #228b22;
+}
+
+.btn-outline:hover {
+  background-color: #228b22;
+  color: #fff;
+}
+
+/* =========================================================
+   14. MEDIA QUERIES
+========================================================= */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 1024px) {
+  .nav-menu {
     gap: 20px;
   }
 
-  .about-section h2 {
-    font-size: 1.3rem;
+  .business-left,
+  .business-right {
+    padding: 40px 20px;
   }
 
-  .about-section p {
-    font-size: 0.9rem;
-    line-height: 1.6;
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .container {
+    width: 95%;
   }
 }
 
-/* Fix logo size on smaller screens */
-header .logo img {
-  max-width: 70px;
-  height: auto;
-}
-
-/* Tablets */
+/* Small Devices (Mobile) */
 @media (max-width: 768px) {
-  header .logo img {
-    max-width: 90px;
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #228b22;
+    font-size: 26px;
+  }
+
+  .business-units {
+    flex-direction: column;
+  }
+
+  .business-left,
+  .business-right {
+    max-width: 100%;
+    min-width: auto;
+    padding: 30px 20px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .career-listings {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
-/* Mobile Phones */
+/* Extra Small Devices */
 @media (max-width: 480px) {
-  header .logo img {
-    max-width: 30px;
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .business-left h2 {
+    font-size: 28px;
+  }
+
+  .project-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .partners-logos img {
+    max-width: 120px;
   }
 }
