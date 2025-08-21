@@ -1172,6 +1172,6 @@ header .logo img {
 /* Mobile Phones */
 @media (max-width: 480px) {
   header .logo img {
-    max-width: 70px;
+    max-width: 50px;
   }
 }
