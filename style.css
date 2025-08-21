@@ -472,7 +472,7 @@ nav {
 
 .two-column {
   display: flex;
-  flex-direction: row; /* Always side by side */
+  flex-wrap: wrap; /* Allow wrapping */
   align-items: center;
   justify-content: space-between;
   gap: 20px;
